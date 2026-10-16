@@ -2,22 +2,22 @@
 
 class Angle {
 private:
-    int degrees_;
+    int m_degrees;
 
 public:
     explicit Angle(int degrees = 0)
-        : degrees_(((degrees % 360) + 360) % 360) {}
+        : m_degrees(((degrees % 360) + 360) % 360) {}
 
 
     int getDegrees() const {
-        return degrees_;
+        return m_degrees;
     }
 
     Angle operator+(const Angle& other) const {
-        return Angle(degrees_ + other.degrees_);
+        return Angle(m_degrees + other.m_degrees);
     }
 
     bool operator==(const Angle& other) const {
-        return degrees_ == other.degrees_;
+        return m_degrees == other.m_degrees;
     }
 };
