@@ -31,8 +31,6 @@ target_include_directories(space_battle PUBLIC src)
 
 
 enable_testing()
-add_executable(app main.cpp)
-target_link_libraries(app space_battle)
 add_executable(
   space_battle_tests 
   tests/test_move_rotate.cpp 
