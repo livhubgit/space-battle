@@ -1,8 +1,9 @@
 // Rotate.h
 #pragma once
 #include "Rotable.h"
+#include "commands/Command.h"
 
-class Rotate {
+class Rotate : public Command {
 public:
     explicit Rotate(Rotable& rotable);
     void execute();
