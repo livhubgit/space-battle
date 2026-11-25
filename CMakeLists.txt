@@ -14,11 +14,28 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(googletest)
 
-add_library(space_battle src/Move.cpp src/Rotate.cpp)
+add_library(
+  space_battle 
+  src/Move.cpp 
+  src/Rotate.cpp 
+  src/CommandProcessor.cpp 
+  src/ExceptionHandlerStore.cpp 
+  src/commands/ExceptionToLogCommand.cpp
+  src/commands/PutInQueueCommand.cpp
+  src/commands/RepeatCommand.cpp
+  src/commands/RepeatTwiceCommand.cpp
+  src/ExceptionHandlers.cpp
+)
 target_include_directories(space_battle PUBLIC src)
 
+
+
 enable_testing()
-add_executable(space_battle_tests tests/test_move_rotate.cpp)
+add_executable(
+  space_battle_tests 
+  tests/test_move_rotate.cpp 
+  tests/test_cmd_exception_to_log.cpp
+  )
 target_link_libraries(space_battle_tests space_battle GTest::gmock_main)
 
 include(GoogleTest)
