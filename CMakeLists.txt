@@ -31,6 +31,15 @@ add_library(
   src/commands/LineMoveCommand.cpp
   src/commands/ChangeVelocityCommand.cpp
   src/commands/RotateWithVelocityCommand.cpp  
+  src/Ioc/Ioc.cpp
+  src/Ioc/UpdateIocResolveDependencyStrategyCommand.cpp
+  src/scope/InitCommand.cpp
+  src/scope/SetCurrentScopeCommand.cpp
+  src/scope/ClearCurrentScopeCommand.cpp
+  src/scope/RegisterDependencyCommand.cpp
+  src/scope/DependencyResolver.cpp
+  src/scope/NewScopeCommand.cpp
+  src/scope/SetCurrentScopeByIdCommand.cpp
 )
 target_include_directories(space_battle PUBLIC src)
 
@@ -42,8 +51,11 @@ add_executable(
   tests/test_move_rotate.cpp 
   tests/test_cmd_exception_to_log.cpp
   tests/test_macrocommand.cpp
+  tests/test_ioc.cpp
   )
-target_link_libraries(space_battle_tests space_battle GTest::gmock_main)
+
+find_package(Threads REQUIRED)
+target_link_libraries(space_battle_tests space_battle GTest::gmock_main Threads::Threads)
 
 include(GoogleTest)
 gtest_discover_tests(space_battle_tests)
