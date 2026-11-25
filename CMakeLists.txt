@@ -25,6 +25,12 @@ add_library(
   src/commands/RepeatCommand.cpp
   src/commands/RepeatTwiceCommand.cpp
   src/ExceptionHandlers.cpp
+  src/commands/CheckFuelCommand.cpp
+  src/commands/BurnFuelCommand.cpp
+  src/commands/MacroCommand.cpp
+  src/commands/LineMoveCommand.cpp
+  src/commands/ChangeVelocityCommand.cpp
+  src/commands/RotateWithVelocityCommand.cpp  
 )
 target_include_directories(space_battle PUBLIC src)
 
@@ -35,6 +41,7 @@ add_executable(
   space_battle_tests 
   tests/test_move_rotate.cpp 
   tests/test_cmd_exception_to_log.cpp
+  tests/test_macrocommand.cpp
   )
 target_link_libraries(space_battle_tests space_battle GTest::gmock_main)
 
