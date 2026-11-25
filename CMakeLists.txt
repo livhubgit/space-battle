@@ -33,13 +33,13 @@ add_library(
   src/commands/RotateWithVelocityCommand.cpp  
   src/Ioc/Ioc.cpp
   src/Ioc/UpdateIocResolveDependencyStrategyCommand.cpp
-  src/Scope/InitCommand.cpp
-  src/Scope/SetCurrentScopeCommand.cpp
-  src/Scope/ClearCurrentScopeCommand.cpp
-  src/Scope/RegisterDependencyCommand.cpp
-  src/Scope/DependencyResolver.cpp
-  src/Scope/NewScopeCommand.cpp
-  src/Scope/SetCurrentScopeByIdCommand.cpp
+  src/scope/InitCommand.cpp
+  src/scope/SetCurrentScopeCommand.cpp
+  src/scope/ClearCurrentScopeCommand.cpp
+  src/scope/RegisterDependencyCommand.cpp
+  src/scope/DependencyResolver.cpp
+  src/scope/NewScopeCommand.cpp
+  src/scope/SetCurrentScopeByIdCommand.cpp
 )
 target_include_directories(space_battle PUBLIC src)
 
